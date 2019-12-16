@@ -1,0 +1,14 @@
+xterm-256color-italic|xterm with 256 colors and italic,
+    sitm=\E[3m, ritm=\E[23m,
+    use=xterm-256color,
+
+# Usage:
+# - Open terminal and type:
+# tic terminfo_iterm2
+
+# - Turn on both:
+# Preferences > Profiles > Text > Italic text allowed
+# Preferences > Profiles > Terminal > Report Terminal Type: > xterm-256color-italic
+# 
+# - Check:
+# echo $TERM
