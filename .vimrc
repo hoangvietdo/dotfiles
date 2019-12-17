@@ -1,5 +1,4 @@
 " ========= Viet's Vim Configuration ========= "
-" Note: The commented Plugin must be manually installed. " 
 
 " Automatically install Plugged "
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -8,8 +7,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" === Plugins ==="
+" === Plug ==="
 call plug#begin('~/.vim/plugged')
+
 Plug 'junegunn/vim-plug'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
@@ -22,9 +22,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'vim-python/python-syntax'
 Plug 'davidhalter/jedi-vim'
-" Plug 'jiangmiao/auto-pairs'
-" Plug 'tpope/vim-surround'
-" Plug 'matze/vim-move'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'matze/vim-move'
+Plug 'junegunn/vim-easy-align'
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
 call plug#end()
 
 " === Nerd-Tree ==="
@@ -96,6 +99,10 @@ let g:lightline = {
 let g:dracula_colorterm=0
 colorscheme dracula
 set background=dark
+
+" === Command ==="
+command! PU PlugUpdate | PlugUpgrade
+
 " === Key Binding ==="
 " Navigate Vim window 'Ctrl + h/j/k/l'
 nnoremap <C-J> <C-W><C-J>
