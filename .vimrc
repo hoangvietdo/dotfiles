@@ -36,6 +36,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " === Configuration ==="
 set nocompatible
+set ai
+set mousemodel=extend
 set number
 set ruler
 set splitbelow
@@ -47,6 +49,7 @@ set clipboard=unnamedplus
 set cursorline
 set nowrap
 set virtualedit=block
+set scrolloff=5
 " ================== "
 set completeopt=menu
 set completeopt+=menuone
@@ -109,9 +112,20 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
 " Open/Close Nerd-Tree using 'Ctrl + x'
 map <C-x> :NERDTreeToggle<CR>
+
 " =========================================== "
 inoremap {<cr> {<cr>}<c-o><s-o>
+
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
+
+" Add a new line without enter insert mode using Ctrl + j/k 
+nnoremap <C-J> o<Esc>
+nnoremap <C-k> O<Esc>
+
+" Expand smartcase to * and #
+nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
+:nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
