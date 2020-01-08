@@ -1,4 +1,5 @@
 " ========= Viet's Vim Configuration ========= "
+"
 
 " Automatically install Plugged "
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -50,6 +51,7 @@ set cursorline
 set nowrap
 set virtualedit=block
 set scrolloff=5
+set re=1
 " ================== "
 set completeopt=menu
 set completeopt+=menuone
@@ -122,9 +124,12 @@ inoremap {<cr> {<cr>}<c-o><s-o>
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
-" Add a new line without enter insert mode using Ctrl + j/k 
-nnoremap <C-J> o<Esc>
-nnoremap <C-k> O<Esc>
+" Add a new line without enter insert mode using Space + o/O in normal mode 
+nmap <Space>o o<Esc>k
+nmap <Space>O O<Esc>j
+
+" Add a space without enter insert mode using Space in normal mode 
+nnoremap <Space> i<Space><Right><ESC>
 
 " Expand smartcase to * and #
 nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
