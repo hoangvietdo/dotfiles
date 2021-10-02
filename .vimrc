@@ -43,7 +43,7 @@ set hidden
 set nostartofline
 set cmdheight=2
 set backspace=indent,eol,start
-:set ww+=<,>,[,]
+set ww+=<,>,[,]
 " ================== "
 set number relativenumber
 autocmd InsertEnter * :set norelativenumber
