@@ -19,7 +19,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'vim-python/python-syntax'
 Plug 'davidhalter/jedi-vim'
@@ -39,19 +39,36 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 set nocompatible
 set ai
 set mousemodel=extend
-set number
+set hidden
+set nostartofline
+set cmdheight=2
+set backspace=indent,eol,start
+:set ww+=<,>,[,]
+" ================== "
+set number relativenumber
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 set ruler
+" ================== "
 set splitbelow
 set splitright
+" ================== "
 set showcmd
 set noshowmode
 set mouse=a
-set clipboard=unnamedplus
+set clipboard=unnamed
 set cursorline
 set nowrap
 set virtualedit=block
 set scrolloff=5
 set re=1
+" Currently, the 'set paste' command is conflicted with the vim plugin
+" auto-pairs
+" set paste
+" ================== "
+set visualbell
+set t_vb=
+set ttyfast
 " ================== "
 set completeopt=menu
 set completeopt+=menuone
@@ -122,7 +139,7 @@ map <C-x> :NERDTreeToggle<CR>
 inoremap {<cr> {<cr>}<c-o><s-o>
 
 "This unsets the "last search pattern" register by hitting return
-nnoremap <CR> :noh<CR><CR>
+nnoremap <CR> :nohlsearch<CR><CR>
 
 " Add a new line without enter insert mode using Space + o/O in normal mode 
 nmap <Space>o o<Esc>k
@@ -133,4 +150,8 @@ nnoremap <Space> i<Space><Right><ESC>
 
 " Expand smartcase to * and #
 nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
-:nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
+nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
+
+" Press F6 to turn on spell checking (currently not working with external
+" keyboard -> switch to compile and run using zsh)
+" map <F6> :setlocal spell! spelllang=en_us<CR>
