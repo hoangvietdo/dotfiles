@@ -1,5 +1,4 @@
 " ========= Viet's Vim Configuration ========= "
-"
 
 " Automatically install Plugged "
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -134,7 +133,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " Open/Close Nerd-Tree using 'Ctrl + x'
 map <C-x> :NERDTreeToggle<CR>
-
+ 
 " =========================================== "
 inoremap {<cr> {<cr>}<c-o><s-o>
 
@@ -151,6 +150,11 @@ nnoremap <Space> i<Space><Right><ESC>
 " Expand smartcase to * and #
 nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
 nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
+
+" Normal mode = block cursor
+" Insert mode = vertical bar cursor
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " Press F6 to turn on spell checking (currently not working with external
 " keyboard -> switch to compile and run using zsh)
