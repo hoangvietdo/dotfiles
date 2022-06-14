@@ -110,8 +110,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias clc='clear'
 alias v='nvim'
+alias vim='nvim'
 alias lsa='ls -la'
 alias of='nautilus .'
+alias lg='lazygit'
 # ----------------------------------------
 alias viet='source ~/.zshrc'
 alias vietzsh='sudo nvim ~/.zshrc'
@@ -122,6 +124,9 @@ alias vietvim='nvim ~/.config/nvim/init.vim'
 # alias runUE_Editor='~/UnrealEngine/./Engine/Binaries/Linux/UE4Editor'
 
 # ----------------------------------------
+function cd {
+    builtin cd "$@" && ls -F
+}
 function runUE(){
   ~/UnrealEngine/./Engine/Binaries/Linux/UE4Editor ~/AirSim/Unreal/Environments/"$1"/"$1".uproject
 }

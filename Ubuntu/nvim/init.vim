@@ -9,27 +9,29 @@ endif
 " === Plug ==="
 call plug#begin()
 
+" Appearance
+Plug 'itchyny/lightline.vim'
+Plug 'dracula/vim',{'as':'dracula'}
+Plug 'sainnhe/sonokai'
+Plug 'dominikduda/vim_current_word'
+
+" File Explorer
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" Basics
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'itchyny/lightline.vim'
-Plug 'dracula/vim',{'as':'dracula'}
-" Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'matze/vim-move'
 Plug 'junegunn/vim-easy-align'
-" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-Plug 'sainnhe/sonokai'
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ggandor/lightspeed.nvim'
 
 call plug#end()
@@ -121,6 +123,9 @@ let g:sonokai_style = 'andromeda'
 let g:sonokai_better_performance = 1
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 0
+let g:sonokai_current_word = 'grey background'
+let g:sonokai_transparent_background = 1
+let g:sonokai_cursor = 'auto'
 colorscheme sonokai
 
 let g:lightline = {
@@ -148,17 +153,17 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Open/Close Nerd-Tree using 'Ctrl + x'
-map <C-x> :NERDTreeToggle<CR>
+" map <C-x> :NERDTreeToggle<CR>
  
 " =========================================== "
-inoremap {<cr> {<cr>}<c-o><s-o>
+" inoremap {<cr> {<cr>}<c-o><s-o>
 
-"This unsets the "last search pattern" register by hitting return
-nnoremap <CR> :nohlsearch<CR><CR>
+"This unsets the "last search pattern" register by hitting enter
+nnoremap <silent> <Enter> :nohlsearch<CR>
 
 " Add a new line without enter insert mode using Space + o/O in normal mode 
-nmap <Space>o o<Esc>k
-nmap <Space>O O<Esc>j
+" nmap <Space>o o<Esc>k
+" nmap <Space>O O<Esc>j
 
 " Add a space without enter insert mode using Space in normal mode 
 " nnoremap <Space> i<Space><Right><ESC>
