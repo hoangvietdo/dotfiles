@@ -1,4 +1,4 @@
-# dotfiles
+## dotfiles
 
 My dotfiles for 
 - tmux (.tmux.conf)
@@ -9,3 +9,6 @@ My dotfiles for
 - neofetch (config.conf)
 
 for MacOS (Monterey) and Ubuntu (20.04).
+
+## Ubuntu 20.04 LunarVim installation
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
