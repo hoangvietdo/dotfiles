@@ -125,6 +125,10 @@ lvim.plugins = {
     event = "BufRead"
   },
   {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
+  {
     "karb94/neoscroll.nvim",
     event = "WinScrolled",
     config = function()
@@ -149,10 +153,6 @@ lvim.plugins = {
     config = function()
       require("todo-comments").setup()
     end,
-  },
-  {
-    "metakirby5/codi.vim",
-    cmd = "Codi",
   },
   {
     "ethanholz/nvim-lastplace",
