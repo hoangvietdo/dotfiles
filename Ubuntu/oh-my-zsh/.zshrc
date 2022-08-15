@@ -12,6 +12,13 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 eval `dircolors /home/vietdo/.dir_colors/dircolors`
 
+# pnpm
+export PNPM_HOME="/home/vietdo/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+export PATH="$HOME/.local/bin:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -40,7 +47,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-DISABLE_MAGIC_FUNCTIONS="true"
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -49,7 +56,7 @@ DISABLE_MAGIC_FUNCTIONS="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -78,10 +85,9 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=()
+plugins=(fast-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-
 
 # User configuration
 
@@ -109,17 +115,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias clc='clear'
-alias v='nvim'
-alias vim='nvim'
+alias v='lvim'
+alias vim='lvim'
 alias lsa='ls -la'
 alias of='nautilus .'
 alias lg='lazygit'
 # ----------------------------------------
 alias viet='source ~/.zshrc'
-alias vietzsh='sudo nvim ~/.zshrc'
+alias vietzsh='lvim ~/.zshrc'
 alias vietupdate='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean && sudo apt clean'
 # alias vietsdk='source mavsdk/bin/activate'
-alias vietvim='nvim ~/.config/nvim/init.vim'
+# alias vietvim='nvim ~/.config/nvim/init.vim'
+# alias vietvim='nvim ~/.config/nvim/lua/custom/init.lua'
+alias vietvim='lvim ~/.config/lvim/config.lua'
 # alias viettmux='nvim ~/.tmux.conf'
 # alias runUE_Editor='~/UnrealEngine/./Engine/Binaries/Linux/UE4Editor'
 
@@ -137,12 +145,15 @@ function runAS(){
   ~/AirSim/build_release/output/bin/"$1"
 }
 # ----------------------------------------
-export EDITOR='nvim'
+export EDITOR='lvim'
 export VISUAL='$EDITOR'
 
-# ROS2 source
-source /opt/ros/noetic/setup.zsh
-source ~/AirSim/ros/devel/setup.zsh
+# ROS1 source
+#alias noetic="source /opt/ros/noetic/setup.zsh; source ~/AirSim/ros/devel/setup.zsh; echo \"Noetic is Activated!\""
+alias noetic="source /opt/ros/noetic/setup.zsh; source ~/AirSim/ros/devel/setup.zsh;source ~/catkin_ws/devel/setup.zsh; echo \"Noetic is Activated!\""
+
+# ROS1 source
+alias foxy="source /opt/ros/foxy/setup.zsh; source ~/AirSim/ros2/install/setup.zsh; echo \"Foxy is Activated!\""
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -159,3 +170,9 @@ else
 fi
 
 neofetch --ascii "$(figlet "Viet")"
+
+echo "Please choose ROS1 (Noetic) / ROS2 (Foxy)!"
+noetic
+#echo $ROS_PACKAGE_PATH
+
+unsetopt correct_all
