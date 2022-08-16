@@ -61,7 +61,7 @@ lvim.plugins = {
   { "sainnhe/sonokai" },
   { "Yggdroot/indentLine" },
   { "tpope/vim-repeat" },
-  { "lervag/vimtex" }
+  { "lervag/vimtex" },
 }
 
 -- general
@@ -107,7 +107,7 @@ vim.opt.swapfile       = false -- creates a swapfile
 vim.opt.termguicolors  = true -- set term gui colors (most terminals support this)
 vim.opt.timeoutlen     = 300 -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.title          = true -- set the title of window to the value of the titlestring
--- vim.opt.undodir        = vim.fn.stdpath "cache" .. "/undo"
+vim.opt.undodir        = vim.fn.stdpath "cache" .. "/undo"
 vim.opt.undofile       = false -- enable persistent undo
 vim.opt.updatetime     = 300 -- faster completion
 vim.opt.writebackup    = false -- if a file is being edited by another program (or was written to file while editing with another program) it is not allowed to be edited
@@ -138,12 +138,31 @@ vim.cmd("nnoremap <C-H> <C-W><C-H>")
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 
+-- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
+-- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
+local _, actions = pcall(require, "telescope.actions")
+lvim.builtin.telescope.defaults.mappings = {
+  -- for input mode
+  i = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+    ["<C-n>"] = actions.cycle_history_next,
+    ["<C-p>"] = actions.cycle_history_prev,
+  },
+  -- for normal mode
+  n = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+  },
+}
+
 -- Latex
-lvim.keys.normal_mode["<F6>"]        = ":VimtexCompile<CR>"
-lvim.builtin.cmp.confirm_opts.select = false
-vim.g.tex_flavor                     = 'latex'
-vim.g.vimtex_view_method             = 'zathura'
-vim.g.vimtex_view_general_viewer     = 'okular'
+lvim.keys.normal_mode["<F6>"]             = ":VimtexCompile<CR>"
+lvim.builtin.cmp.confirm_opts.select      = false
+vim.g.tex_flavor                          = 'latex'
+vim.g.vimtex_view_method                  = 'zathura'
+vim.g.vimtex_view_general_viewer          = 'okular'
+vim.g.vimtex_view_forward_search_on_start = 1
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active                           = true
@@ -189,3 +208,22 @@ lvim.lsp.installer.setup.ui.keymaps = {
   uninstall_server = "d",
   toggle_server_expand = "o",
 }
+
+-- Autocommands (https://neovim.io/doc/user/autocmd.html)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "zsh",
+  callback = function()
+    -- let treesitter use bash highlight for zsh files as well
+    require("nvim-treesitter.highlight").attach(0, "bash")
+  end,
+})
+
+-- Barbar
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+-- Move to previous/next
+map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
+-- Re-order to previous/next
+map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
+map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
