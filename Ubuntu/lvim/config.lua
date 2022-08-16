@@ -1,11 +1,12 @@
 -- Viet's LunarVim Config
 -- general
-lvim.log.level                       = "warn"
-lvim.format_on_save                  = true
-lvim.transparent_window              = false
-lvim.builtin.lualine.style           = "default"
-lvim.builtin.lualine.options.theme   = "ayu_mirage"
-lvim.colorscheme                     = "sonokai"
+lvim.log.level                     = "warn"
+lvim.format_on_save                = true
+lvim.transparent_window            = false
+lvim.builtin.lualine.style         = "default"
+lvim.builtin.lualine.options.theme = "ayu_mirage"
+lvim.colorscheme                   = "sonokai"
+
 vim.g.sonokai_style                  = 'andromeda'
 vim.g.sonokai_better_performance     = 1
 vim.g.sonokai_enable_italic          = 1
@@ -13,6 +14,7 @@ vim.g.sonokai_disable_italic_comment = 0
 vim.g.sonokai_current_word           = 'grey background'
 vim.g.sonokai_transparent_background = 1
 vim.g.sonokai_cursor                 = 'auto'
+vim.g.tex_flavor                     = "latex"
 
 vim.opt.backup         = false -- creates a backup file
 vim.opt.clipboard      = "unnamedplus" -- allows neovim to access the system clipboard
@@ -40,7 +42,7 @@ vim.opt.termguicolors  = true -- set term gui colors (most terminals support thi
 vim.opt.timeoutlen     = 300 -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.title          = true -- set the title of window to the value of the titlestring
 vim.opt.undodir        = vim.fn.stdpath "cache" .. "/undo"
-vim.opt.undofile       = true -- enable persistent undo
+vim.opt.undofile       = false -- enable persistent undo
 vim.opt.updatetime     = 300 -- faster completion
 vim.opt.writebackup    = false -- if a file is being edited by another program (or was written to file while editing with another program) it is not allowed to be edited
 vim.opt.expandtab      = true -- convert tabs to spaces
