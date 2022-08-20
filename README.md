@@ -3,7 +3,7 @@
 My dotfiles for 
 - tmux (.tmux.conf)
 - vim (.vimrc)
-- neovim (init.vim)
+- neovim (init.lua)
 - oh-my-zsh (.zshrc)
 - neofetch (config.conf)
 
