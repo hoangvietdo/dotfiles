@@ -2,7 +2,7 @@
 
 My dotfiles for 
 - tmux (.tmux.conf)
-- vim (.vimrc)
+- vim (.vimrc) - deprecated
 - neovim (init.lua)
 - oh-my-zsh (.zshrc)
 - neofetch (config.conf)
