@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { 'lua', 'bash', 'markdown'},
+  ensure_installed = { 'lua', 'bash', 'c', 'cpp', 'cmake', 'json', 'python', 'yaml'},
 
   -- Automatically install missing parsers when entering buffer
   auto_install = false,
@@ -15,6 +15,8 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+
+  indent = {enable = true},
 }
 
 local wk = require("which-key")

@@ -215,7 +215,21 @@ local opts = {
         margin = 5,
     },
 }
-
 alpha.setup(opts)
+
+local function footer()
+    -- local total_plugins = #vim.tbl_keys(packer_plugins)
+    -- local datetime = os.date(" %d-%m-%Y   %H:%M:%S")
+    -- local version = vim.version()
+    -- local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
+    -- local text = "Viet Do: "
+    -- return text .. datetime .. "   " .. total_plugins .. " plugins" .. nvim_version_info
+  return "Viet Do"
+end
+
+dashboard.section.footer.val = footer()
+dashboard.section.footer.opts.hl = "Type"
+alpha.setup(dashboard.opts)
+
 vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
 

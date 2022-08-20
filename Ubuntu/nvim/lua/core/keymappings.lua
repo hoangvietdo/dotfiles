@@ -32,3 +32,9 @@ keymap("v", ">", ">gv", opts)
 -- Turn on / off Lsp Diag
 keymap("n", "'", ":ToggleDiagOff<CR>", opts)
 keymap("n", "<leader>'", ":ToggleDiagOn<CR>", opts)
+
+-- No highlight search
+keymap("n", "<leader>h", ":nohlsearch<CR>", opts)
+
+-- Easy Align = 
+keymap("v", "<leader>i", "<esc>:'<,'>EasyAlign=<CR>", opts)
