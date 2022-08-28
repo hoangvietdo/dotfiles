@@ -8,7 +8,7 @@ wk.setup {
 
 wk.register({
   ["<leader>"] = {
-    r = { "Rename" },
+    r = { "Rename Variables" },
     w = {
       name = "Window",
       q = { "<cmd>q<cr>", "Close" },

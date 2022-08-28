@@ -51,3 +51,8 @@ vim.cmd("autocmd InsertLeave * :set norelativenumber")
 
 -- Format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+
+
+-- Indent blankline
+vim.opt.list = true
+vim.opt.listchars:append "eol:↴"

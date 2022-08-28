@@ -87,7 +87,7 @@ return require('packer').startup({
     use { 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim' }
     use { 'goolord/alpha-nvim', requires = { 'kyazdani42/nvim-web-devicons' }, config = [[load_plugin_config'alpha']] }
 
-    use { 'folke/twilight.nvim', config = [[load_plugin_config'twilight']] }
+    use { 'benstockil/twilight.nvim', config = [[load_plugin_config'twilight']] }
 
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then

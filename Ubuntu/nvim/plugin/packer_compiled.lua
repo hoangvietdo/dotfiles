@@ -249,7 +249,7 @@ _G.packer_plugins = {
     config = { "load_plugin_config'twilight'" },
     loaded = true,
     path = "/home/vietdo/.local/share/nvim/site/pack/packer/start/twilight.nvim",
-    url = "https://github.com/folke/twilight.nvim"
+    url = "https://github.com/benstockil/twilight.nvim"
   },
   ["vim-easy-align"] = {
     loaded = true,
