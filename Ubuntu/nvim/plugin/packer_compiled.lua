@@ -193,6 +193,7 @@ _G.packer_plugins = {
     url = "https://github.com/terrortylor/nvim-comment"
   },
   ["nvim-lastplace"] = {
+    config = { "load_plugin_config'nvim-lastplace'" },
     loaded = true,
     path = "/home/vietdo/.local/share/nvim/site/pack/packer/start/nvim-lastplace",
     url = "https://github.com/ethanholz/nvim-lastplace"
@@ -305,6 +306,10 @@ time([[Config for which-key.nvim]], false)
 time([[Config for indent-blankline.nvim]], true)
 load_plugin_config'indent-blankline'
 time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-lastplace
+time([[Config for nvim-lastplace]], true)
+load_plugin_config'nvim-lastplace'
+time([[Config for nvim-lastplace]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 load_plugin_config'alpha'

@@ -78,7 +78,7 @@ return require('packer').startup({
     use { 'ggandor/lightspeed.nvim' }
     use { 'karb94/neoscroll.nvim' }
     use { 'folke/todo-comments.nvim' }
-    use { 'ethanholz/nvim-lastplace' }
+    use { 'ethanholz/nvim-lastplace', config = [[load_plugin_config'nvim-lastplace']] }
     use { 'tpope/vim-surround' }
     use { 'matze/vim-move' }
     use { 'terryma/vim-multiple-cursors' }
