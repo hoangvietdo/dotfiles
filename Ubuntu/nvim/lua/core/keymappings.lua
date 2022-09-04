@@ -52,3 +52,6 @@ end, { expr = true })
 
 -- Twilight
 keymap("n", "<leader>tw", ":Twilight<CR>", opts)
+
+-- Copy all the file
+keymap("n", "<leader>s", "ggVGy", opts)

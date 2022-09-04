@@ -37,7 +37,7 @@ vim.opt.shiftwidth     = 2 -- the number of spaces inserted for each indentation
 vim.opt.tabstop        = 2 -- insert 2 spaces for a tab
 vim.opt.cursorline     = true -- highlight the current line
 vim.opt.number         = true -- set numbered lines
-vim.opt.relativenumber = false -- set relative numbered lines
+vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.numberwidth    = 4 -- set number column width to 2 {default 4}
 vim.opt.signcolumn     = "no" -- always show the sign column otherwise it would shift the text each time
 vim.opt.wrap           = false -- display lines as one long line
@@ -46,13 +46,13 @@ vim.opt.spelllang      = "en"
 vim.opt.scrolloff      = 8 -- is one of my fav
 vim.opt.sidescrolloff  = 8
 
-vim.cmd("autocmd InsertEnter * :set relativenumber")
-vim.cmd("autocmd InsertLeave * :set norelativenumber")
+vim.cmd("autocmd InsertLeave * :set relativenumber")
+vim.cmd("autocmd InsertEnter * :set norelativenumber")
 
 -- Format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 
 
 -- Indent blankline
-vim.opt.list = true
-vim.opt.listchars:append "eol:↴"
+-- vim.opt.list = true
+-- vim.opt.listchars:append "eol:↴"

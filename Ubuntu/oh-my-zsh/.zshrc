@@ -19,11 +19,17 @@ export PATH="$PNPM_HOME:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# comp_prog
+export PATH="$HOME/Documents/comp_prog/scripts:$PATH"
+
+export TERM=xterm-256color
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="ghost"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -85,7 +91,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fast-syntax-highlighting)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,26 +120,34 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias p='python3'
 alias clc='clear'
-alias v='lvim'
-alias vim='lvim'
+alias v='nvim'
+alias vim='nvim'
 alias lsa='ls -la'
-alias of='nautilus .'
 alias lg='lazygit'
 # ----------------------------------------
 alias viet='source ~/.zshrc'
-alias vietzsh='lvim ~/.zshrc'
+alias vietzsh='nvim ~/.zshrc'
 alias vietupdate='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean && sudo apt clean'
-# alias vietsdk='source mavsdk/bin/activate'
-# alias vietvim='nvim ~/.config/nvim/init.vim'
-# alias vietvim='nvim ~/.config/nvim/lua/custom/init.lua'
-alias vietvim='lvim ~/.config/lvim/config.lua'
-# alias viettmux='nvim ~/.tmux.conf'
+alias vimopt='nvim ~/.config/nvim/lua/core/options.lua'
+alias vimmap='nvim ~/.config/nvim/lua/core/keymappings.lua'
+alias vimplug='nvim ~/.config/nvim/lua/plugins/plugin-manager.lua'
+alias vietkitty='nvim ~/.config/kitty/kitty.conf'
+alias cdconf='cd ~/.config/nvim/lua/plugins/configs'
+alias viettmux='nvim ~/.tmux.conf'
+alias of='nautilus'
 # alias runUE_Editor='~/UnrealEngine/./Engine/Binaries/Linux/UE4Editor'
+
+# recordmydesktop shortcut
+alias recordmywindow='window_id=`xwininfo | grep "Window id" | sed -e "s@.*Window id: \([0-9a-fA-Fx]*\).*@\1@"`; recordmydesktop --no-wm-check --workdir /home/vietdo/Videos --no-sound --windowid $window_id'
 
 # ----------------------------------------
 function cd {
-    builtin cd "$@" && ls -F
+  builtin cd "$@" && ls -F
+}
+function lsg {
+  lsa | grep "$1"
 }
 function runUE(){
   ~/UnrealEngine/./Engine/Binaries/Linux/UE4Editor ~/AirSim/Unreal/Environments/"$1"/"$1".uproject
@@ -150,7 +164,7 @@ export VISUAL='$EDITOR'
 
 # ROS1 source
 #alias noetic="source /opt/ros/noetic/setup.zsh; source ~/AirSim/ros/devel/setup.zsh; echo \"Noetic is Activated!\""
-alias noetic="source /opt/ros/noetic/setup.zsh; source ~/AirSim/ros/devel/setup.zsh;source ~/catkin_ws/devel/setup.zsh; echo \"Noetic is Activated!\""
+alias noetic="source /opt/ros/noetic/setup.zsh; source ~/AirSim/ros/devel/setup.zsh;source ~/catkin_ws/devel/setup.zsh; source ~/catkin_ws_lidar/devel/setup.zsh; echo \"Noetic is Activated!\""
 
 # ROS1 source
 alias foxy="source /opt/ros/foxy/setup.zsh; source ~/AirSim/ros2/install/setup.zsh; echo \"Foxy is Activated!\""
@@ -171,8 +185,30 @@ fi
 
 neofetch --ascii "$(figlet "Viet")"
 
+# Auto Jump
+. /usr/share/autojump/autojump.sh
+
 echo "Please choose ROS1 (Noetic) / ROS2 (Foxy)!"
 noetic
-#echo $ROS_PACKAGE_PATH
+# echo $ROS_PACKAGE_PATH
 
-unsetopt correct_all
+# unsetopt correct_all
+
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/vietdo/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/vietdo/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/vietdo/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/vietdo/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

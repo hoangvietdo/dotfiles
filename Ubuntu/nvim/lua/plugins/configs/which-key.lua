@@ -8,6 +8,7 @@ wk.setup {
 
 wk.register({
   ["<leader>"] = {
+    s = { "Copy all lines" },
     r = { "Rename Variables" },
     w = {
       name = "Window",
