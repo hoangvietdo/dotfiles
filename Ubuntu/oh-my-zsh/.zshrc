@@ -136,7 +136,7 @@ alias vimplug='nvim ~/.config/nvim/lua/plugins/plugin-manager.lua'
 alias vietkitty='nvim ~/.config/kitty/kitty.conf'
 alias cdconf='cd ~/.config/nvim/lua/plugins/configs'
 alias viettmux='nvim ~/.tmux.conf'
-alias of='nautilus'
+alias of='nautilus .'
 # alias runUE_Editor='~/UnrealEngine/./Engine/Binaries/Linux/UE4Editor'
 
 # recordmydesktop shortcut
