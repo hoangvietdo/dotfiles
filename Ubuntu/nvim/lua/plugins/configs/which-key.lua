@@ -11,6 +11,9 @@ wk.register({
     s = { "Copy all lines" },
     r = { "Rename Variables" },
     w = {
+      name = "Save files",
+    },
+    W = {
       name = "Window",
       q = { "<cmd>q<cr>", "Close" },
       s = { "<cmd>sp<cr>", "Split Horizontal" },

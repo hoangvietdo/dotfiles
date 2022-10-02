@@ -55,3 +55,6 @@ keymap("n", "<leader>tw", ":Twilight<CR>", opts)
 
 -- Copy all the file
 keymap("n", "<leader>s", "ggVGy", opts)
+
+-- Save files
+keymap("n", "<leader>w", ":w<CR>", opts)
