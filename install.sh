@@ -21,11 +21,17 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+  echo "Install autojump"
+    sudo apt-get install autojump
+
+  echo "Downloading SFMono Nerd Font, please install it!"
+    git clone https://github.com/epk/SF-Mono-Nerd-Font 
+
   echo "Copying Config for Ubuntu"
-    cp -r Ubuntu/nvim ~/.config/nvim
+    cp -r Ubuntu/nvim ~/.config/
     cp Ubuntu/tmux/.tmux.conf ~/.tmux.conf
     cp Ubuntu/oh-my-zsh/.zshrc ~/.zshrc
-    cp -r Ubuntu/neofetch ~/.config/neofetch
+    cp -r Ubuntu/neofetch ~/.config/
     cp Ubuntu/oh-my-zsh/.p10k.zsh ~/.p10k.zsh
 
   echo "Finished!"
@@ -37,6 +43,12 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Install Tmux"
     brew install tmux
 
+  echo "Install autojump"
+    brew install autojump
+
+  echo "Downloading SFMono Nerd Font, please install it!"
+    git clone https://github.com/epk/SF-Mono-Nerd-Font 
+
   echo "Install zsh, oh-my-zsh, and powerlevel10k"
     brew install zsh
     chsh -s /usr/local/bin/zsh
@@ -44,7 +56,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
   echo "Copying Config for MacOS"
-    cp -r MacOS/nvim ~/.config/nvim
+    cp -r MacOS/nvim ~/.config/
     cp MacOS/tmux/.tmux.conf ~/.tmux.conf
     cp MacOS/oh-my-zsh/.zshrc ~/.zshrc
     cp MacOS/oh-my-zsh/.p10k.zsh ~/.p10k.zsh
