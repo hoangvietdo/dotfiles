@@ -11,3 +11,5 @@ for MacOS (Monterey) and Ubuntu (20.04).
 
 ## Usages
 Run the auto-install shell script `./install.sh`
+
+For Ubuntu, log out and log in again or reboot after installation.
