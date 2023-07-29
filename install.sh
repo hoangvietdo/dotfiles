@@ -1,28 +1,30 @@
-#!/bin/zsh
+#!/bin/bash
 
 # sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove && sudo apt-get clean
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo "Install Unstable Neovim"
     sudo apt-get install software-properties-common
-    sudo add-apt-repository ppa:neovim-ppa/unstable
+    sudo add-apt-repository ppa:neovim-ppa/stable
     sudo apt-get update
-    sudo apt-get install neovim
-    sudo apt install python3-neovim
-    sudo apt-get install xclip
+    sudo apt-get install neovim -y
+    sudo apt install python3-neovim -y
+    sudo apt-get install xclip -y
+    sudo apt-get install terminator -y
 
   echo "Install Tmux, Neofetch"
-    sudo apt-get install tmux
-    sudo apt-get install neofetch
-    sudo apt-get install figlet
+    sudo apt-get install tmux -y
+    sudo apt-get install neofetch -y
+    sudo apt-get install figlet -y
 
   echo "Install zsh, oh-my-zsh, and powerlevel10k"
-    sudo apt-get install zsh
+    sudo apt-get install zsh -y
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    chsh -s $(which zsh)
 
   echo "Install autojump"
-    sudo apt-get install autojump
+    sudo apt-get install autojump -y
 
   echo "Downloading SFMono Nerd Font, please install it!"
     git clone https://github.com/epk/SF-Mono-Nerd-Font 
