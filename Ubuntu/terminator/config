@@ -2,6 +2,8 @@
   dbus = False
   title_transmit_bg_color = "#de9b9b"
   title_receive_bg_color = "#ffb47f"
+  window_state = hidden
+  always_on_top = True
   title_use_system_font = False
   title_font = SFMono Nerd Font 9
 [keybindings]
