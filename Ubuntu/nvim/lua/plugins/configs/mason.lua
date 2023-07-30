@@ -1,6 +1,11 @@
 require("mason").setup({
   ui = {
-    border = 'single'
+    border = 'single',
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
+    }
   }
 })
 
@@ -9,7 +14,7 @@ wk.register({
   ["<leader>"] = {
     m = {
       name = "Mason",
-      o = {"<cmd>Mason<cr>", "Open"},
+      o = { "<cmd>Mason<cr>", "Open" },
     },
   },
 })

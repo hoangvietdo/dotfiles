@@ -33,9 +33,9 @@ return require('packer').startup({
 
     -- Components
     use { 'famiu/bufdelete.nvim' }
-    use { 'akinsho/bufferline.nvim', tag = '*', requires = { 'kyazdani42/nvim-web-devicons' },
+    use { 'akinsho/bufferline.nvim', tag = '*', requires = { 'nvim-tree/nvim-web-devicons' },
       config = [[load_plugin_config('bufferline')]] }
-    use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' },
+    use { 'kyazdani42/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' },
       config = [[load_plugin_config'nvim-tree']] }
     use { 'feline-nvim/feline.nvim', config = [[load_plugin_config'feline']] }
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' },
@@ -65,6 +65,8 @@ return require('packer').startup({
     use { 'neovim/nvim-lspconfig' }
     use { 'williamboman/mason.nvim', config = [[load_plugin_config'mason']] }
     use { 'williamboman/mason-lspconfig.nvim', config = [[load_plugin_config'mason-lspconfig']] }
+
+    -- Rename
     use {
       "smjonas/inc-rename.nvim",
       config = function()
@@ -72,9 +74,8 @@ return require('packer').startup({
       end,
     }
 
-    -- Git
     use { 'lewis6991/gitsigns.nvim', config = [[load_plugin_config'gitsigns']] }
-
+    use { 'nvim-tree/nvim-web-devicons', config = [[load_plugin_config'nvim-web-devicons']] }
     use { 'ggandor/lightspeed.nvim' }
     use { 'karb94/neoscroll.nvim' }
     use { 'folke/todo-comments.nvim' }
@@ -84,9 +85,8 @@ return require('packer').startup({
     use { 'terryma/vim-multiple-cursors' }
     use { 'junegunn/vim-easy-align' }
     use { 'tpope/vim-repeat' }
-    use { 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim' }
-    use { 'goolord/alpha-nvim', requires = { 'kyazdani42/nvim-web-devicons' }, config = [[load_plugin_config'alpha']] }
-
+    use { 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim', config = [[load_plugin_config'toggle-lsp-diagnostics']] }
+    use { 'goolord/alpha-nvim', requires = { 'nvim-tree/nvim-web-devicons' }, config = [[load_plugin_config'alpha']] }
     use { 'benstockil/twilight.nvim', config = [[load_plugin_config'twilight']] }
 
     -- Automatically set up your configuration after cloning packer.nvim

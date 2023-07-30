@@ -1,7 +1,7 @@
 require("mason-lspconfig").setup({
   -- A list of servers to automatically install if they're not already installed. Example: { "rust-analyzer@nightly", "sumneko_lua" }
   -- This setting has no relation with the `automatic_installation` setting.
-  ensure_installed = { 'sumneko_lua', 'bashls', 'clangd', 'cmake', 'jsonls', 'pyright', 'yamlls' },
+  ensure_installed = {},
 
   -- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
   -- This setting has no relation with the `ensure_installed` setting.
@@ -11,7 +11,7 @@ require("mason-lspconfig").setup({
   --   - { exclude: string[] }: All servers set up via lspconfig, except the ones provided in the list, are automatically installed.
 
   --       Example: automatic_installation = { exclude = { "rust_analyzer", "solargraph" } }
-  automatic_installation = false,
+  automatic_installation = true,
 })
 
 local border = {
@@ -30,7 +30,7 @@ local handlers = {
   ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 }
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 require("mason-lspconfig").setup_handlers {
   -- The first entry (without a key) will be the default handler
@@ -44,19 +44,6 @@ require("mason-lspconfig").setup_handlers {
   end,
 
   -- Next, you can provide targeted overrides for specific servers.
-  ["sumneko_lua"] = function()
-    require("lspconfig").sumneko_lua.setup {
-      handlers = handlers,
-      capabilities = capabilities,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" }
-          }
-        }
-      }
-    }
-  end,
 }
 
 local wk = require("which-key")

@@ -58,3 +58,6 @@ keymap("n", "<leader>s", "ggVGy", opts)
 
 -- Save files
 keymap("n", "<leader>w", ":w<CR>", opts)
+
+-- Align all file and comeback previous cursor position
+keymap("n", "<leader>i", "gg=G<C-o>", opts)

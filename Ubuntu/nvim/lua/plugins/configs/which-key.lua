@@ -9,6 +9,7 @@ wk.setup {
 wk.register({
   ["<leader>"] = {
     s = { "Copy all lines" },
+    i = { "Align all lines" },
     r = { "Rename Variables" },
     w = {
       name = "Save files",
