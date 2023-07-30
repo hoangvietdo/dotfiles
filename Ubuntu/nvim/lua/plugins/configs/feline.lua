@@ -31,7 +31,9 @@ local vi_mode_colors = {
 local c = {
   vim_mode = {
     icon = {
-      str = ' ',
+      -- str = ' ',
+      str = '🐈 ',
+      -- str = '😽 ',
       always_visible = true
     },
     provider = {
@@ -45,7 +47,7 @@ local c = {
       return {
         fg = require("feline.providers.vi_mode").get_mode_color(),
         bg = "darkblue",
-        style = "none",
+        style = "bold",
         name = "NeovimModeHLColor",
       }
     end,
