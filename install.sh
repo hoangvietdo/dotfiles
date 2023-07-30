@@ -3,14 +3,23 @@
 # sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove && sudo apt-get clean
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  echo "Install Unstable Neovim"
-    sudo apt-get install software-properties-common
-    sudo add-apt-repository ppa:neovim-ppa/stable
-    sudo apt-get update
-    sudo apt-get install neovim -y
-    sudo apt install python3-neovim -y
+  echo "Install Stable Neovim from Source"
+    sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove && sudo apt-get clean
     sudo apt-get install xclip -y
     sudo apt-get install terminator -y
+    sudo apt-get install python3-pip -y
+    pip install -U pynvim
+    pip install 'python-lsp-server[all]' pylsp-mypy python-lsp-isort python-lsp-black
+    wget https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz
+    mkdir -p $HOME/tools
+    tar xvf node-v14.15.4-linux-x64.tar.xz --directory=$HOME/tools
+    npm install -g vim-language-server
+    sudo apt-get install ninja-build gettext cmake unzip curl
+    git clone https://github.com/neovim/Neovim
+    cd neovim 
+    git checkout stable
+    make CMAKE_BUILD_TYPE=RelWithDebInfo 
+    sudo make install
 
   echo "Install Tmux, Neofetch"
     sudo apt-get install tmux -y

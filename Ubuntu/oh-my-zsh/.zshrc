@@ -23,6 +23,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/Documents/comp_prog/scripts:$PATH"
 
 export TERM=xterm-256color
+export PATH="$HOME/tools/node-v14.15.4-linux-x64/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -149,25 +150,25 @@ function cd {
 function lsg {
   lsa | grep "$1"
 }
-function runUE(){
-  ~/UnrealEngine/./Engine/Binaries/Linux/UE4Editor ~/AirSim/Unreal/Environments/"$1"/"$1".uproject
-}
-function fixUE(){
-  ~/UnrealEngine/Engine/Build/BatchFiles/Linux/Build.sh Linux Development -Project=/home/viet/AirSim/Unreal/Environments/"$1"/"$1".uproject -TargetType=Editor
-}
-function runAS(){
-  ~/AirSim/build_release/output/bin/"$1"
-}
+# function runUE(){
+#   ~/UnrealEngine/./Engine/Binaries/Linux/UE4Editor ~/AirSim/Unreal/Environments/"$1"/"$1".uproject
+# }
+# function fixUE(){
+#   ~/UnrealEngine/Engine/Build/BatchFiles/Linux/Build.sh Linux Development -Project=/home/viet/AirSim/Unreal/Environments/"$1"/"$1".uproject -TargetType=Editor
+# }
+# function runAS(){
+#   ~/AirSim/build_release/output/bin/"$1"
+# }
 # ----------------------------------------
-export EDITOR='lvim'
+export EDITOR='nvim'
 export VISUAL='$EDITOR'
 
 # ROS1 source
 #alias noetic="source /opt/ros/noetic/setup.zsh; source ~/AirSim/ros/devel/setup.zsh; echo \"Noetic is Activated!\""
-alias noetic="source /opt/ros/noetic/setup.zsh; source ~/AirSim/ros/devel/setup.zsh;source ~/catkin_ws/devel/setup.zsh; source ~/catkin_ws_lidar/devel/setup.zsh; echo \"Noetic is Activated!\""
+# alias noetic="source /opt/ros/noetic/setup.zsh; source ~/AirSim/ros/devel/setup.zsh;source ~/catkin_ws/devel/setup.zsh; source ~/catkin_ws_lidar/devel/setup.zsh; echo \"Noetic is Activated!\""
 
 # ROS1 source
-alias foxy="source /opt/ros/foxy/setup.zsh; source ~/AirSim/ros2/install/setup.zsh; echo \"Foxy is Activated!\""
+# alias foxy="source /opt/ros/foxy/setup.zsh; source ~/AirSim/ros2/install/setup.zsh; echo \"Foxy is Activated!\""
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -189,7 +190,7 @@ neofetch --ascii "$(figlet "Viet")"
 . /usr/share/autojump/autojump.sh
 
 echo "Please choose ROS1 (Noetic) / ROS2 (Foxy)!"
-noetic
+# noetic
 # echo $ROS_PACKAGE_PATH
 
 # unsetopt correct_all
