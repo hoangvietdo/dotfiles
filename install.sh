@@ -20,6 +20,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     git checkout stable
     make CMAKE_BUILD_TYPE=RelWithDebInfo 
     sudo make install
+    cd
 
   echo "Install Tmux, Neofetch"
     sudo apt-get install tmux -y
