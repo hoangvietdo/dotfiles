@@ -62,9 +62,9 @@ return require('packer').startup({
     use { 'onsails/lspkind.nvim' }
 
     -- LSP
-    use { 'neovim/nvim-lspconfig' }
     use { 'williamboman/mason.nvim', config = [[load_plugin_config'mason']] }
     use { 'williamboman/mason-lspconfig.nvim', config = [[load_plugin_config'mason-lspconfig']] }
+    use { 'neovim/nvim-lspconfig' }
 
     -- Rename
     use {

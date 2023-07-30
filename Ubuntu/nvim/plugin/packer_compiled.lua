@@ -293,34 +293,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: twilight.nvim
-time([[Config for twilight.nvim]], true)
-load_plugin_config'twilight'
-time([[Config for twilight.nvim]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-load_plugin_config'nvim-comment'
-time([[Config for nvim-comment]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-load_plugin_config'gitsigns'
-time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-lastplace
-time([[Config for nvim-lastplace]], true)
-load_plugin_config'nvim-lastplace'
-time([[Config for nvim-lastplace]], false)
--- Config for: inc-rename.nvim
-time([[Config for inc-rename.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15inc_rename\frequire\0", "config", "inc-rename.nvim")
-time([[Config for inc-rename.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-load_plugin_config'indent-blankline'
-time([[Config for indent-blankline.nvim]], false)
--- Config for: catppuccin
-time([[Config for catppuccin]], true)
-load_plugin_config'catppuccin'
-time([[Config for catppuccin]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+load_plugin_config'nvim-tree'
+time([[Config for nvim-tree.lua]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+load_plugin_config('bufferline')
+time([[Config for bufferline.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 load_plugin_config'nvim-treesitter'
@@ -333,10 +313,6 @@ time([[Config for nvim-web-devicons]], false)
 time([[Config for mason-lspconfig.nvim]], true)
 load_plugin_config'mason-lspconfig'
 time([[Config for mason-lspconfig.nvim]], false)
--- Config for: feline.nvim
-time([[Config for feline.nvim]], true)
-load_plugin_config'feline'
-time([[Config for feline.nvim]], false)
 -- Config for: mason.nvim
 time([[Config for mason.nvim]], true)
 load_plugin_config'mason'
@@ -345,38 +321,62 @@ time([[Config for mason.nvim]], false)
 time([[Config for telescope.nvim]], true)
 load_plugin_config'telescope'
 time([[Config for telescope.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-load_plugin_config'which-key'
-time([[Config for which-key.nvim]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
-load_plugin_config'luasnip'
-time([[Config for LuaSnip]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-load_plugin_config'nvim-tree'
-time([[Config for nvim-tree.lua]], false)
+-- Config for: catppuccin
+time([[Config for catppuccin]], true)
+load_plugin_config'catppuccin'
+time([[Config for catppuccin]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 load_plugin_config'nvim-autopairs'
 time([[Config for nvim-autopairs]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-load_plugin_config'alpha'
-time([[Config for alpha-nvim]], false)
--- Config for: toggle-lsp-diagnostics.nvim
-time([[Config for toggle-lsp-diagnostics.nvim]], true)
-load_plugin_config'toggle-lsp-diagnostics'
-time([[Config for toggle-lsp-diagnostics.nvim]], false)
+-- Config for: feline.nvim
+time([[Config for feline.nvim]], true)
+load_plugin_config'feline'
+time([[Config for feline.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 load_plugin_config'nvim-cmp'
 time([[Config for nvim-cmp]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-load_plugin_config('bufferline')
-time([[Config for bufferline.nvim]], false)
+-- Config for: twilight.nvim
+time([[Config for twilight.nvim]], true)
+load_plugin_config'twilight'
+time([[Config for twilight.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+load_plugin_config'which-key'
+time([[Config for which-key.nvim]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+load_plugin_config'nvim-comment'
+time([[Config for nvim-comment]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+load_plugin_config'luasnip'
+time([[Config for LuaSnip]], false)
+-- Config for: nvim-lastplace
+time([[Config for nvim-lastplace]], true)
+load_plugin_config'nvim-lastplace'
+time([[Config for nvim-lastplace]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+load_plugin_config'alpha'
+time([[Config for alpha-nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+load_plugin_config'gitsigns'
+time([[Config for gitsigns.nvim]], false)
+-- Config for: inc-rename.nvim
+time([[Config for inc-rename.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15inc_rename\frequire\0", "config", "inc-rename.nvim")
+time([[Config for inc-rename.nvim]], false)
+-- Config for: toggle-lsp-diagnostics.nvim
+time([[Config for toggle-lsp-diagnostics.nvim]], true)
+load_plugin_config'toggle-lsp-diagnostics'
+time([[Config for toggle-lsp-diagnostics.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+load_plugin_config'indent-blankline'
+time([[Config for indent-blankline.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
