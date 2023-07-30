@@ -40,11 +40,13 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     git clone https://github.com/epk/SF-Mono-Nerd-Font 
 
   echo "Copying Config for Ubuntu"
+    cd ~/Documents/dotfiles/
     cp -r Ubuntu/nvim ~/.config/
     cp Ubuntu/tmux/.tmux.conf ~/.tmux.conf
     cp Ubuntu/oh-my-zsh/.zshrc ~/.zshrc
     cp -r Ubuntu/neofetch ~/.config/
     cp Ubuntu/oh-my-zsh/.p10k.zsh ~/.p10k.zsh
+    mkdir ~/.dir_colors/ && cp Ubuntu/dir_colors/dircolors ~/.dir_colors/
 
   echo "Finished!"
 
