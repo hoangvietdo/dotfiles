@@ -24,6 +24,7 @@
     background_type = transparent
     cursor_blink = False
     cursor_color = "#cdd6f4"
+    show_titlebar = False
     font = SFMono Nerd Font 13
     foreground_color = "#ffffff"
     scroll_on_keystroke = False
