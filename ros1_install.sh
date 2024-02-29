@@ -14,3 +14,4 @@ sudo sh \
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install python3-catkin-tools -y
+echo "source /opt/ros/noetic/setup.zsh" >> ~/.zshrc
