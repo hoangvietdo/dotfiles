@@ -11,4 +11,3 @@ sudo apt update
 sudo apt upgrade
 sudo apt install ros-foxy-desktop python3-argcomplete -y
 sudo apt install ros-dev-tools -y
-echo "alias foxy="source /opt/ros/foxy/setup.zsh; echo \"Foxy is Activated!\""" >> ~/.zshrc
