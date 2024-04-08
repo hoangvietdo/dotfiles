@@ -5,11 +5,11 @@
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	echo "Installing the latest 'nightly' neovim."
 	if [ -d ~/.config/nvim ]; then
-		cp ~/.config/nvim ~/.config/nvim.old
+		cp -r ~/.config/nvim ~/.config/nvim.old
 		echo "Backing up old nvim config to ~/.config/nvim.old."
 	fi
 	cd
-	sudo add-apt-repository ppa:neovim-ppa/stable -y
+	sudo add-apt-repository ppa:neovim-ppa/unstable -y
 	sudo apt update
 	sudo apt install git make gcc ripgrep unzip xclip curl ninja-build gettext python3-pip python3.8-venv neovim npm -y
 	pip install -U pynvim
