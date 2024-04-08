@@ -5,7 +5,8 @@
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	echo "Installing the latest 'nightly' neovim."
 	if [ -d ~/.config/nvim ]; then
-		cp -r ~/.config/nvim ~/.config/nvim.old
+		sudo cp -r ~/.config/nvim ~/.config/nvim.old
+  		sudo rm -rf ~/.config/nvim
 		echo "Backing up old nvim config to ~/.config/nvim.old."
 	fi
 	cd
@@ -17,7 +18,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	wget https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz
 	mkdir -p $HOME/tools
 	tar xvf node-v14.15.4-linux-x64.tar.xz --directory=$HOME/tools
-	npm install -g vim-language-server
+	sudo npm install -g vim-language-server
 	git clone https://github.com/hoangvietdo/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 	nvim
 	echo "Finished!!!"
