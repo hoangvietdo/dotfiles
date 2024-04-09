@@ -13,8 +13,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	sudo add-apt-repository ppa:neovim-ppa/unstable -y
 	sudo apt update
 	sudo apt install git make gcc ripgrep unzip xclip curl ninja-build gettext python3-pip python3.8-venv neovim npm -y
-	pip install -U pynvim
-	pip install 'python-lsp-server[all]' pyright
+	pip3 install -U pynvim
+	pip3 install 'python-lsp-server[all]' pyright
 	wget https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz
 	mkdir -p $HOME/tools
 	tar xvf node-v14.15.4-linux-x64.tar.xz --directory=$HOME/tools
